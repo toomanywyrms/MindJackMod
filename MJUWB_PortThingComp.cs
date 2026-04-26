@@ -18,10 +18,10 @@ namespace MindJackUniqueWeaponBind
             if (!isRegistered)
             {   
                 //Returns the text from the XML
-                yield return new StatDrawEntry(StatCategoryDefOf.Basics, "MJUWB_PortThingComp_PortName".Translate(), "MJUWB_PortThingComp_PortStateDisconnected".Translate(), "MJUWB_PortThingComp_PortDescriptionDisconnected".Translate(), 15000);
+                yield return new StatDrawEntry(StatCategoryDefOf.Basics, "MJUWB_PortThingComp_PortName".Translate(), "MJUWB_PortThingComp_PortStateDisconnected".Translate(), "MJUWB_PortThingComp_PortDescriptionDisconnected".Translate(), 150000);
             }
             //Returns the text from the XML and inserts the Pawn's name
-            else yield return new StatDrawEntry(StatCategoryDefOf.Basics, "MJUWB_PortThingComp_PortName".Translate(), "MJUWB_PortThingComp_PortStateConnectedValid".Translate(registeredPawn.NameFullColored), "MJUWB_PortThingComp_PortDescriptionConnectedValid".Translate(registeredPawn.NameFullColored), 15000);
+            else yield return new StatDrawEntry(StatCategoryDefOf.Basics, "MJUWB_PortThingComp_PortName".Translate(), "MJUWB_PortThingComp_PortStateConnectedValid".Translate(registeredPawn.NameFullColored), "MJUWB_PortThingComp_PortDescriptionConnectedValid".Translate(registeredPawn.NameFullColored), 150000);
 
         }
 
@@ -32,6 +32,16 @@ namespace MindJackUniqueWeaponBind
             registeredPawn = pawn;
         }
 
+        //saving relevant info
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Values.Look(ref isRegistered, "bool");
+            Scribe_References.Look(ref registeredPawn, "pawn");
+        }
+
      }
+
+    
 
 }
