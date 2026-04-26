@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <HediffDef ParentName="ImplantHediffBase">
+      <defName>MJUWB_MindJackHediffEmpty</defName>
+      <label>mind jack (unregistered)</label>
+      <labelNoun>a mind jack</labelNoun>
+      <description>An installed mind jack, allowing the user to connect directly to a specialized weapon's Port, copying the unique markup of their brain and registering it with the onboard rudamentary AI. While the user is holding the reigistered weapon, their performance with the weapon is increased, and their state of mind is enhanced. Once installed, the user can not remove the mind jack, as it will result in irreperable damage to the brain, as well as potential death.\n\nThe user can format their mind jack to register it with a new weapon, however, their mental capacities will suffer while the format process runs.</description>
+      <spawnThingOnRemoved>MJUWB_MindJack</spawnThingOnRemoved>
+    </HediffDef>
+
+  <ThingDef ParentName="BodyPartProstheticMakeableBase">
+      <defName>MJUWB_MindJack</defName>
+      <label>mind jack</label>
+      <description>An implant installed in the brain, allowing the user to connect directly to a specialized weapon's Port, copying the unique markup of their brain and registering it with the onboard rudamentary AI. While the user is holding the reigistered weapon, their performance with the weapon is increased, and their state of mind is enhanced. Once installed, the user can not remove the mind jack, as it will result in irreperable damage to the brain, as well as potential death.\n\nThe user can format their mind jack to register it with a new weapon, however, their mental capacities will suffer while the format process runs.</description>
+      <descriptionHyperlinks><RecipeDef>MJUWB_InstallMindJack</RecipeDef></descriptionHyperlinks>
+      <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+      <costList>
+        <Steel>40</Steel>
+        <ComponentIndustrial>6</ComponentIndustrial>
+      </costList>
+      <statBases>
+        <Mass>0.1</Mass>
+        <DeteriorationRate>0.2</DeteriorationRate>
+        <MaxHitPoints>100</MaxHitPoints>
+        <Flammability>0</Flammability>
+        <MarketValue>700</MarketValue> 
+      </statBases>
+      <recipeMaker>
+        <researchPrerequisite>MultiAnalyzer</researchPrerequisite>
+      </recipeMaker>
+      <techHediffsTags>
+        <li>Advanced</li>
+      </techHediffsTags>
+    </ThingDef>
+
+    <RecipeDef ParentName="SurgeryInstallImplantBase">
+      <defName>MJUWB_InstallMindJack</defName>
+      <label>install mind jack</label>
+      <description>Install a mind jack</description>
+      <descriptionHyperlinks>
+        <ThingDef>MJUWB_MindJack</ThingDef>
+        <HediffDef>MJUWB_MindJackHediffEmpty</HediffDef>
+      </descriptionHyperlinks>
+      <jobString>Installing mind jack.</jobString>
+      <ingredients>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>MJUWB_MindJack</li>
+            </thingDefs>
+          </filter>
+          <count>1</count>
+        </li>
+      </ingredients>
+      <fixedIngredientFilter>
+        <thingDefs>
+          <li>MJUWB_MindJack</li>
+        </thingDefs>
+      </fixedIngredientFilter>
+      <appliedOnFixedBodyParts>
+        <li>Brain</li>
+      </appliedOnFixedBodyParts>
+      <addsHediff>MJUWB_MindJackHediffEmpty</addsHediff>
+    </RecipeDef>
+
+  </Defs>
