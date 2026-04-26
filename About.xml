@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Mind Jack: Unique Weapon Bonding</name>
+    <author>toomanywyrms</author>
+	<packageId>TWM.MJMOD</packageId>
+    <modVersion>1.0</modVersion>
+    <supportedVersions>
+        <li>1.6</li>
+    </supportedVersions>
+    <description>This mod allows you to craft the Mind Jack; an attachment installed in your brain that allows you to bind yourself to unique guns, enhancing both the user and the weapon.</description>
+    <modDependencies>
+        <li>
+            <packageId>Ludeon.RimWorld.Odyssey</packageId>
+            <displayName>Odyssey</displayName>
+        </li>
+    </modDependencies>
+    <loadAfter>
+         <li>Ludeon.RimWorld.Odyssey</li>
+    </loadAfter>
+</ModMetaData>

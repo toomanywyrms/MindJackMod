@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+  <Operation Class="PatchOperationInsert">
+    <xpath>Defs/ThingDef/comps/li[@Class="CompProperties_UniqueWeapon"]</xpath>
+    <value>
+      <li>
+          <compClass>MindJackUniqueWeaponBind.MJUWB_PortThingComp</compClass>
+      </li>
+    </value>
+  </Operation>
+</Patch>

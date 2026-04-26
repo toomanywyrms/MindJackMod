@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <MJUWB_Bind>Bind with {0}</MJUWB_Bind>
+    <MJUWB_PortThingComp_PortName>Port</MJUWB_PortThingComp_PortName>
+    <MJUWB_PortThingComp_PortStateDisconnected>Disconnected</MJUWB_PortThingComp_PortStateDisconnected>
+    <MJUWB_PortThingComp_PortDescriptionDisconnected>A port used for a Mind Jack to neurocode with the Pawn's unique Brain Markup. This enhances the Pawn's capibilities with this weapon, as well as his overall state of mind\n\nThis weapon is not currently registered to any Pawn's Mind Jack</MJUWB_PortThingComp_PortDescriptionDisconnected>
+    <MJUWB_PortThingComp_PortStateConnectedValid>Registered ({0})</MJUWB_PortThingComp_PortStateConnectedValid>
+    <MJUWB_PortThingComp_PortDescriptionConnectedValid>A port used for a Mind Jack to neurocode with the Pawn's unique Brain Markup. This enhances the Pawn's capibilities with this weapon, as well as his overall state of mind\n\nThis weapon is currently registered to {0}'s Mind Jack</MJUWB_PortThingComp_PortDescriptionConnectedValid>
+
+
+</LanguageData>
