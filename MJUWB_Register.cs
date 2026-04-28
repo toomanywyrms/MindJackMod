@@ -1,5 +1,6 @@
-﻿using System;
+﻿using MindJackMod;
 using RimWorld;
+using System;
 using Verse;
 using Verse.AI;
 
@@ -15,17 +16,19 @@ namespace MindJackUniqueWeaponBind
         protected override FloatMenuOption GetSingleOptionFor(Thing clickedThing, FloatMenuContext context)
         {
             Pawn currentPawn = context.FirstSelectedPawn;
-            //This checks if the selected weapon has a Port
-            if (clickedThing.HasComp<MJUWB_PortThingComp>())
+            //This checks if the selected weapon has a Port and Pawn has a mind jack installed
+            if (clickedThing.HasComp<MJUWB_PortThingComp>() && currentPawn.health.hediffSet.TryGetHediff(MJUWB_DefOf.MJUWB_MindJackHediff, out Hediff hediff))
                 {
-                //Sets the port so we can modify it later
+                //Sets the port and mind jack so we can modify them later
                 MJUWB_PortThingComp port = clickedThing.TryGetComp<MJUWB_PortThingComp>();
+                MJUWB_MindJack mindjack = (MJUWB_MindJack)hediff;
                 //Adds context menu "Bind to (Weapon Name)"
                 //TOADD: Context menues for: PAWN W/O Mind Jack, PAWN W/ Registered Mind Jack
                 return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("MJUWB_Bind".Translate(clickedThing.Label), () =>
                 {
                     //Calls bond process and sets quality to Good if the weapon is of a higher quality (to account for mods)
-                    port.ConnectToPort(currentPawn);
+                    mindjack.registeredWeapon = clickedThing;
+                    port.ConnectToPort(currentPawn, mindjack);
                     CompQuality wepQuality = clickedThing.TryGetComp<CompQuality>();
 
                     if (wepQuality.Quality > QualityCategory.Good)
@@ -35,6 +38,7 @@ namespace MindJackUniqueWeaponBind
                         wepQuality.SetQuality(QualityCategory.Good, null);
                     }
                     //JUST FOR TESTING REMOVE LATER
+                    Log.Message(mindjack.registeredWeapon.Label);
                     Log.Message("Bind Clicked");
                     Log.Message(port.registeredPawn.NameFullColored);
                 }), context.FirstSelectedPawn, clickedThing);

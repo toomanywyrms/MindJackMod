@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MJUWB_DefOf.cs" />
+    <Compile Include="MJUWB_MindJackHediff.cs" />
     <Compile Include="MJUWB_PortThingComp.cs" />
     <Compile Include="MJUWB_Register.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

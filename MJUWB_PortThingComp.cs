@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using MindJackMod;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,10 +27,38 @@ namespace MindJackUniqueWeaponBind
         }
 
         //When the pawn registers the Mind Jack to the weapon's Port
-        public void ConnectToPort(Pawn pawn)
+        public void ConnectToPort(Pawn pawn, MJUWB_MindJack mindjack)
         {
             isRegistered = true;
             registeredPawn = pawn;
+            mindjack.Severity = 3;
+
+        }
+
+        public override void Notify_Equipped(Pawn pawn)
+        {
+            if (pawn == registeredPawn)
+            {
+                CompQuality wepQuality = parent.TryGetComp<CompQuality>();
+                wepQuality.SetQuality(QualityCategory.Legendary, null);
+                pawn.health.hediffSet.TryGetHediff(MJUWB_DefOf.MJUWB_MindJackHediff, out Hediff hediff);
+                MJUWB_MindJack mindjack = (MJUWB_MindJack)hediff;
+                mindjack.Severity = 2;
+
+            }
+        }
+
+        public override void Notify_Unequipped(Pawn pawn)
+        {
+            if (pawn == registeredPawn)
+            {
+                CompQuality wepQuality = parent.TryGetComp<CompQuality>();
+                wepQuality.SetQuality(QualityCategory.Good, null);
+                pawn.health.hediffSet.TryGetHediff(MJUWB_DefOf.MJUWB_MindJackHediff, out Hediff hediff);
+                MJUWB_MindJack mindjack = (MJUWB_MindJack)hediff;
+                mindjack.Severity = 3;
+
+            }
         }
 
         //saving relevant info
