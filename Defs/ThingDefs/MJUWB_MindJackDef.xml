@@ -1,11 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-  <HediffDef ParentName="ImplantHediffBase">
-      <defName>MJUWB_MindJackHediffEmpty</defName>
-      <label>mind jack (unregistered)</label>
+  <HediffDef>
+      <defName>MJUWB_MindJackHediff</defName>
+      <label>mind jack</label>
       <labelNoun>a mind jack</labelNoun>
+      <defaultLabelColor>(0.6, 1,0, 1.0)</defaultLabelColor>
+      <hediffClass>MindJackMod.MJUWB_MindJack</hediffClass>
       <description>An installed mind jack, allowing the user to connect directly to a specialized weapon's Port, copying the unique markup of their brain and registering it with the onboard rudamentary AI. While the user is holding the reigistered weapon, their performance with the weapon is increased, and their state of mind is enhanced. Once installed, the user can not remove the mind jack, as it will result in irreperable damage to the brain, as well as potential death.\n\nThe user can format their mind jack to register it with a new weapon, however, their mental capacities will suffer while the format process runs.</description>
-      <spawnThingOnRemoved>MJUWB_MindJack</spawnThingOnRemoved>
+      <initialSeverity>1</initialSeverity>
+      <isBad>false</isBad>
+      <maxSeverity>4</maxSeverity>
+      <countsAsAddedPartOrImplant>true</countsAsAddedPartOrImplant>
+      <stages>
+        <li>
+            <label>unregistered</label>
+            <minSeverity>1</minSeverity>
+        </li>
+        <li>
+            <label>formatting</label>
+            <minSeverity>1.1</minSeverity>
+            <capMods>
+              <li>
+                <capacity>Consciousness</capacity>
+                <setMax>0.9</setMax>
+              </li>      
+            </capMods>
+         </li>
+         <li>
+            <label>connected</label>
+            <minSeverity>2</minSeverity>
+            <capMods>
+              <li>
+                <capacity>Consciousness</capacity>
+                <offset>0.1</offset>
+              </li>      
+            </capMods>
+         </li>
+         <li>
+            <label>disconnected</label>
+            <minSeverity>3</minSeverity>
+         </li>   
+      </stages>
     </HediffDef>
 
   <ThingDef ParentName="BodyPartProstheticMakeableBase">
@@ -26,7 +61,7 @@
         <MarketValue>700</MarketValue> 
       </statBases>
       <recipeMaker>
-        <researchPrerequisite>MultiAnalyzer</researchPrerequisite>
+        <researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
       </recipeMaker>
       <techHediffsTags>
         <li>Advanced</li>
@@ -39,7 +74,7 @@
       <description>Install a mind jack</description>
       <descriptionHyperlinks>
         <ThingDef>MJUWB_MindJack</ThingDef>
-        <HediffDef>MJUWB_MindJackHediffEmpty</HediffDef>
+        <HediffDef>MJUWB_MindJackHediff</HediffDef>
       </descriptionHyperlinks>
       <jobString>Installing mind jack.</jobString>
       <ingredients>
@@ -60,7 +95,7 @@
       <appliedOnFixedBodyParts>
         <li>Brain</li>
       </appliedOnFixedBodyParts>
-      <addsHediff>MJUWB_MindJackHediffEmpty</addsHediff>
+      <addsHediff>MJUWB_MindJackHediff</addsHediff>
     </RecipeDef>
 
   </Defs>
