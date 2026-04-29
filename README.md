@@ -27,8 +27,11 @@ For now, we do what we can to make do. In the Rim, every single bullet counts
 * (TBD) Become a victim of a Mind Jack raid, led by a raider holding a registered weapon. If you kill them, you still get a Good quality Unique Weapon. However, you might want to consider keeping them alive, and get the most out of the weapon once you get your hands on it
 
 ## Credits
-Code is available for use on Git Hub, and is very well documented. Feel free to use it as you learn modding, or by adding your own desired functionality. Please do not redestribute the code or the mod or try and claim it as your own.
-Art for the Mind Jack implant and art used in this workshop page are made by the wonderful ItsHalno. Support them on (LINK TO ITSHALNO KOFI AND/OR STEAM)
-TBA ARTIST CREDIT FOR BANNER
+Code is available for use on Git Hub, and is very well documented. Feel free to use it as you learn modding, or for releasing new features. Please do not redestribute the code or the mod or try and claim it as your own.  
+  
+Art for the Mind Jack implant and art used in this workshop page are made by the wonderful ItsHalno. Support them on (LINK TO ITSHALNO KOFI AND/OR STEAM)  
+  
+TBA ARTIST CREDIT FOR BANNER  
+  
 Special thanks to the Rimworld discord for helping me make this mod a reality, and being patient as I learn the ins and outs of Rimworld's code and XML structure
 
