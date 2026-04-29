@@ -4,7 +4,7 @@
     <xpath>Defs/ThingDef/comps/li[@Class="CompProperties_UniqueWeapon"]</xpath>
     <value>
       <li>
-          <compClass>MindJackUniqueWeaponBind.MJUWB_PortThingComp</compClass>
+          <compClass>MindJackUniqueWeaponBind.MJUWE_PortThingComp</compClass>
       </li>
     </value>
   </Operation>

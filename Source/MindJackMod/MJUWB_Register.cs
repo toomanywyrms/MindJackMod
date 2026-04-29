@@ -17,16 +17,19 @@ namespace MindJackUniqueWeaponBind
         {
             Pawn currentPawn = context.FirstSelectedPawn;
             //This checks if the selected weapon has a Port and Pawn has a mind jack installed
-            if (clickedThing.HasComp<MJUWB_PortThingComp>() && currentPawn.health.hediffSet.TryGetHediff(MJUWB_DefOf.MJUWB_MindJackHediff, out Hediff hediff))
+            if (clickedThing.HasComp<MJUWE_PortThingComp>() && currentPawn.health.hediffSet.TryGetHediff(MJUWE_DefOf.MJUWE_MindJackHediff, out Hediff hediff))
                 {
                 //Sets the port and mind jack so we can modify them later
-                MJUWB_PortThingComp port = clickedThing.TryGetComp<MJUWB_PortThingComp>();
-                MJUWB_MindJack mindjack = (MJUWB_MindJack)hediff;
                 //Adds context menu "Bind to (Weapon Name)"
                 //TOADD: Context menues for: PAWN W/O Mind Jack, PAWN W/ Registered Mind Jack
-                return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("MJUWB_Bind".Translate(clickedThing.Label), () =>
+                return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("MJUWE_Bind".Translate(clickedThing.Label), () =>
                 {
-                    //Calls bond process and sets quality to Good if the weapon is of a higher quality (to account for mods)
+
+                    //This calls the job that bonds upon completion
+
+                    Job job = JobMaker.MakeJob(MJUWE_DefOf.MJUWE_MindJackRegistration, new LocalTargetInfo(clickedThing));
+                    context.FirstSelectedPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                    /* MJUWE_PortThingComp port = clickedThing.TryGetComp<MJUWE_PortThingComp>();
                     mindjack.registeredWeapon = clickedThing;
                     port.ConnectToPort(currentPawn, mindjack);
                     CompQuality wepQuality = clickedThing.TryGetComp<CompQuality>();
@@ -40,7 +43,7 @@ namespace MindJackUniqueWeaponBind
                     //JUST FOR TESTING REMOVE LATER
                     Log.Message(mindjack.registeredWeapon.Label);
                     Log.Message("Bind Clicked");
-                    Log.Message(port.registeredPawn.NameFullColored);
+                    Log.Message(port.registeredPawn.NameFullColored); */ 
                 }), context.FirstSelectedPawn, clickedThing);
             }
             return null;

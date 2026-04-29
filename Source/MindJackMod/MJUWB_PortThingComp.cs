@@ -9,7 +9,7 @@ using Verse;
 
 namespace MindJackUniqueWeaponBind
 {
-    public class MJUWB_PortThingComp : ThingComp
+    public class MJUWE_PortThingComp : ThingComp
     {
         public Pawn registeredPawn = null;
         public bool isRegistered = false;
@@ -19,43 +19,43 @@ namespace MindJackUniqueWeaponBind
             if (!isRegistered)
             {   
                 //Returns the text from the XML
-                yield return new StatDrawEntry(StatCategoryDefOf.Basics, "MJUWB_PortThingComp_PortName".Translate(), "MJUWB_PortThingComp_PortStateDisconnected".Translate(), "MJUWB_PortThingComp_PortDescriptionDisconnected".Translate(), 150000);
+                yield return new StatDrawEntry(StatCategoryDefOf.Basics, "MJUWE_PortThingComp_PortName".Translate(), "MJUWE_PortThingComp_PortStateDisconnected".Translate(), "MJUWE_PortThingComp_PortDescriptionDisconnected".Translate(), 150000);
             }
             //Returns the text from the XML and inserts the Pawn's name
-            else yield return new StatDrawEntry(StatCategoryDefOf.Basics, "MJUWB_PortThingComp_PortName".Translate(), "MJUWB_PortThingComp_PortStateConnectedValid".Translate(registeredPawn.NameFullColored), "MJUWB_PortThingComp_PortDescriptionConnectedValid".Translate(registeredPawn.NameFullColored), 150000);
+            else yield return new StatDrawEntry(StatCategoryDefOf.Basics, "MJUWE_PortThingComp_PortName".Translate(), "MJUWE_PortThingComp_PortStateConnectedValid".Translate(registeredPawn.NameFullColored), "MJUWE_PortThingComp_PortDescriptionConnectedValid".Translate(registeredPawn.NameFullColored), 150000);
 
         }
 
         //When the pawn registers the Mind Jack to the weapon's Port
-        public void ConnectToPort(Pawn pawn, MJUWB_MindJack mindjack)
+        public void ConnectToPort(Pawn pawn, MJUWE_MindJack mindjack)
         {
             isRegistered = true;
             registeredPawn = pawn;
             mindjack.Severity = 3;
 
         }
-
+        //this is called when the Pawn equips a weapon. It checks if the current weapon is the bonded one
         public override void Notify_Equipped(Pawn pawn)
         {
             if (pawn == registeredPawn)
             {
                 CompQuality wepQuality = parent.TryGetComp<CompQuality>();
                 wepQuality.SetQuality(QualityCategory.Legendary, null);
-                pawn.health.hediffSet.TryGetHediff(MJUWB_DefOf.MJUWB_MindJackHediff, out Hediff hediff);
-                MJUWB_MindJack mindjack = (MJUWB_MindJack)hediff;
+                pawn.health.hediffSet.TryGetHediff(MJUWE_DefOf.MJUWE_MindJackHediff, out Hediff hediff);
+                MJUWE_MindJack mindjack = (MJUWE_MindJack)hediff;
                 mindjack.Severity = 2;
 
             }
         }
-
+        //this is called when the Pawn unequips or drops by down
         public override void Notify_Unequipped(Pawn pawn)
         {
             if (pawn == registeredPawn)
             {
                 CompQuality wepQuality = parent.TryGetComp<CompQuality>();
                 wepQuality.SetQuality(QualityCategory.Good, null);
-                pawn.health.hediffSet.TryGetHediff(MJUWB_DefOf.MJUWB_MindJackHediff, out Hediff hediff);
-                MJUWB_MindJack mindjack = (MJUWB_MindJack)hediff;
+                pawn.health.hediffSet.TryGetHediff(MJUWE_DefOf.MJUWE_MindJackHediff, out Hediff hediff);
+                MJUWE_MindJack mindjack = (MJUWE_MindJack)hediff;
                 mindjack.Severity = 3;
 
             }

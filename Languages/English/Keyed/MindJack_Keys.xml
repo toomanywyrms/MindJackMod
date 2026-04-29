@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
 
-    <MJUWB_Bind>Bind with {0}</MJUWB_Bind>
-    <MJUWB_PortThingComp_PortName>Port</MJUWB_PortThingComp_PortName>
-    <MJUWB_PortThingComp_PortStateDisconnected>Disconnected</MJUWB_PortThingComp_PortStateDisconnected>
-    <MJUWB_PortThingComp_PortDescriptionDisconnected>A port used for a mind jack to neurocode with the user's unique brain markup. This enhances the user's capibilities with this weapon, as well as their overall state of mind\n\nThis weapon is not currently registered to any user's mind jack</MJUWB_PortThingComp_PortDescriptionDisconnected>
-    <MJUWB_PortThingComp_PortStateConnectedValid>Registered ({0})</MJUWB_PortThingComp_PortStateConnectedValid>
-    <MJUWB_PortThingComp_PortDescriptionConnectedValid>A port used for a mind jack to neurocode with the user's unique brain markup. This enhances the user's capibilities with this weapon, as well as their overall state of mind\n\nThis weapon is currently registered to {0}'s mind jack</MJUWB_PortThingComp_PortDescriptionConnectedValid>
+    <MJUWE_Bind>Bind with {0}</MJUWE_Bind>
+    <MJUWE_PortThingComp_PortName>Port</MJUWE_PortThingComp_PortName>
+    <MJUWE_PortThingComp_PortStateDisconnected>Disconnected</MJUWE_PortThingComp_PortStateDisconnected>
+    <MJUWE_PortThingComp_PortDescriptionDisconnected>A port used for a mind jack to neurocode with the user's unique brain markup. This enhances the user's capibilities with this weapon, as well as their overall state of mind\n\nThis weapon is not currently registered to any user's mind jack</MJUWE_PortThingComp_PortDescriptionDisconnected>
+    <MJUWE_PortThingComp_PortStateConnectedValid>Registered ({0})</MJUWE_PortThingComp_PortStateConnectedValid>
+    <MJUWE_PortThingComp_PortDescriptionConnectedValid>A port used for a mind jack to neurocode with the user's unique brain markup. This enhances the user's capibilities with this weapon, as well as their overall state of mind\n\nThis weapon is currently registered to {0}'s mind jack</MJUWE_PortThingComp_PortDescriptionConnectedValid>
 
 
 </LanguageData>

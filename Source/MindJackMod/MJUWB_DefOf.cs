@@ -9,8 +9,9 @@ using Verse;
 namespace MindJackMod
 {
     [DefOf]
-    public static class MJUWB_DefOf
+    public static class MJUWE_DefOf
     {
-        public static HediffDef MJUWB_MindJackHediff;
+        public static HediffDef MJUWE_MindJackHediff;
+        public static JobDef MJUWE_MindJackRegistration;
     }
 }

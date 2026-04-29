@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
   <HediffDef>
-      <defName>MJUWB_MindJackHediff</defName>
+      <defName>MJUWE_MindJackHediff</defName>
       <label>mind jack</label>
       <labelNoun>a mind jack</labelNoun>
       <defaultLabelColor>(0.6, 1,0, 1.0)</defaultLabelColor>
-      <hediffClass>MindJackMod.MJUWB_MindJack</hediffClass>
+      <hediffClass>MindJackMod.MJUWE_MindJack</hediffClass>
       <description>An installed mind jack, allowing the user to connect directly to a specialized weapon's Port, copying the unique markup of their brain and registering it with the onboard rudamentary AI. While the user is holding the reigistered weapon, their performance with the weapon is increased, and their state of mind is enhanced. Once installed, the user can not remove the mind jack, as it will result in irreperable damage to the brain, as well as potential death.\n\nThe user can format their mind jack to register it with a new weapon, however, their mental capacities will suffer while the format process runs.</description>
       <initialSeverity>1</initialSeverity>
       <isBad>false</isBad>
@@ -44,10 +44,10 @@
     </HediffDef>
 
   <ThingDef ParentName="BodyPartProstheticMakeableBase">
-      <defName>MJUWB_MindJack</defName>
+      <defName>MJUWE_MindJack</defName>
       <label>mind jack</label>
       <description>An implant installed in the brain, allowing the user to connect directly to a specialized weapon's Port, copying the unique markup of their brain and registering it with the onboard rudamentary AI. While the user is holding the reigistered weapon, their performance with the weapon is increased, and their state of mind is enhanced. Once installed, the user can not remove the mind jack, as it will result in irreperable damage to the brain, as well as potential death.\n\nThe user can format their mind jack to register it with a new weapon, however, their mental capacities will suffer while the format process runs.</description>
-      <descriptionHyperlinks><RecipeDef>MJUWB_InstallMindJack</RecipeDef></descriptionHyperlinks>
+      <descriptionHyperlinks><RecipeDef>MJUWE_InstallMindJack</RecipeDef></descriptionHyperlinks>
       <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
       <costList>
         <Steel>40</Steel>
@@ -69,19 +69,19 @@
     </ThingDef>
 
     <RecipeDef ParentName="SurgeryInstallImplantBase">
-      <defName>MJUWB_InstallMindJack</defName>
+      <defName>MJUWE_InstallMindJack</defName>
       <label>install mind jack</label>
       <description>Install a mind jack</description>
       <descriptionHyperlinks>
-        <ThingDef>MJUWB_MindJack</ThingDef>
-        <HediffDef>MJUWB_MindJackHediff</HediffDef>
+        <ThingDef>MJUWE_MindJack</ThingDef>
+        <HediffDef>MJUWE_MindJackHediff</HediffDef>
       </descriptionHyperlinks>
       <jobString>Installing mind jack.</jobString>
       <ingredients>
         <li>
           <filter>
             <thingDefs>
-              <li>MJUWB_MindJack</li>
+              <li>MJUWE_MindJack</li>
             </thingDefs>
           </filter>
           <count>1</count>
@@ -89,13 +89,19 @@
       </ingredients>
       <fixedIngredientFilter>
         <thingDefs>
-          <li>MJUWB_MindJack</li>
+          <li>MJUWE_MindJack</li>
         </thingDefs>
       </fixedIngredientFilter>
       <appliedOnFixedBodyParts>
         <li>Brain</li>
       </appliedOnFixedBodyParts>
-      <addsHediff>MJUWB_MindJackHediff</addsHediff>
+      <addsHediff>MJUWE_MindJackHediff</addsHediff>
     </RecipeDef>
+
+    <JobDef>
+      <defName>MJUWE_MindJackRegistration</defName>
+      <driverClass>MindJackMod.MJUWE_RegisterJob</driverClass>
+      <reportString>hacking TargetA.</reportString>
+    </JobDef>
 
   </Defs>
