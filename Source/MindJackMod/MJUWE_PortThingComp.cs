@@ -34,20 +34,27 @@ namespace MindJackUniqueWeaponBind
             mindjack.Severity = 4;
 
         }
-        //this is called when the Pawn equips a weapon. It checks if the current weapon is the bonded one
+        //this is called when the Pawn equips a weapon. It checks if the current weapon is the registered one one. If yes, buff
         public override void Notify_Equipped(Pawn pawn)
         {
             if (pawn == registeredPawn)
             {
                 CompQuality wepQuality = parent.TryGetComp<CompQuality>();
-                wepQuality.SetQuality(QualityCategory.Legendary, null);
                 pawn.health.hediffSet.TryGetHediff(MJUWE_DefOf.MJUWE_MindJackHediff, out Hediff hediff);
                 MJUWE_MindJack mindjack = (MJUWE_MindJack)hediff;
-                mindjack.Severity = 3;
+
+                //double checks that the registered weapon in the mindjack is the same as this weapon
+                //if this check isn't done, a pawn could have 2 bonded weapons, as the weapon does not get formatted when the mindjack does
+                if (mindjack.registeredWeapon == parent)
+                {
+                    wepQuality.SetQuality(QualityCategory.Legendary, null);
+                    mindjack.Severity = 3;
+                }
+                
 
             }
         }
-        //this is called when the Pawn unequips or drops by down
+        //this is called when the Pawn unequips or drops by down. It checks if the weapon dropped is the registered one one. If yes, remove buff
         public override void Notify_Unequipped(Pawn pawn)
         {
             if (pawn == registeredPawn)
@@ -55,8 +62,13 @@ namespace MindJackUniqueWeaponBind
                 CompQuality wepQuality = parent.TryGetComp<CompQuality>();
                 wepQuality.SetQuality(QualityCategory.Good, null);
                 pawn.health.hediffSet.TryGetHediff(MJUWE_DefOf.MJUWE_MindJackHediff, out Hediff hediff);
-                MJUWE_MindJack mindjack = (MJUWE_MindJack)hediff;
-                mindjack.Severity = 4;
+                MJUWE_MindJack mindjack = (MJUWE_MindJack)hediff;          
+                //see above
+                if (mindjack.registeredWeapon == parent)
+                {
+                    wepQuality.SetQuality(QualityCategory.Good, null);
+                    mindjack.Severity = 4;
+                }
 
             }
         }

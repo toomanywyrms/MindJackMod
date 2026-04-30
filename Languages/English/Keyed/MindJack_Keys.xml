@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
 
-    <MJUWE_Bind>Bind with {0}</MJUWE_Bind>
+    <MJUWE_Bind>Register to {0}</MJUWE_Bind>
     <MJUWE_PortThingComp_PortName>Port</MJUWE_PortThingComp_PortName>
     <MJUWE_PortThingComp_PortStateDisconnected>Disconnected</MJUWE_PortThingComp_PortStateDisconnected>
-    <MJUWE_PortThingComp_PortDescriptionDisconnected>A port used for a mindjack to neurocode with the user's unique brain markup. This enhances the user's capibilities with this weapon, as well as their overall state of mind\n\nThis weapon is not currently registered to any user's mindjack</MJUWE_PortThingComp_PortDescriptionDisconnected>
+    <MJUWE_PortThingComp_PortDescriptionDisconnected>A port for connecting directly with a user's mindjack. This process registers the user's unique neural architecture into the weapon's rudimentary onboard AI, improving the effectiveness of both the weapon and the registered user.\n\nThis weapon is currently disconnected, and can be freely wielded by any user without penalties, or registered to a new user</MJUWE_PortThingComp_PortDescriptionDisconnected>
     <MJUWE_PortThingComp_PortStateConnectedValid>Registered ({0})</MJUWE_PortThingComp_PortStateConnectedValid>
-    <MJUWE_PortThingComp_PortDescriptionConnectedValid>A port used for a mindjack to neurocode with the user's unique brain markup. This enhances the user's capibilities with this weapon, as well as their overall state of mind\n\nThis weapon is currently registered to {0}'s mindjack</MJUWE_PortThingComp_PortDescriptionConnectedValid>
+    <MJUWE_PortThingComp_PortDescriptionConnectedValid>A port for connecting directly with a user's mindjack. This process registers the users unique neural architecture into the weapon's rudimentary onboard AI, improving the effectiveness of both the weapon and the registered user.\n\nThis weapon is currently registered to {0}, and cannot be used at full effectiveness by anyone except them.</MJUWE_PortThingComp_PortDescriptionConnectedValid>
+    <MJUWE_PortThingComp_ErrorWeaponReg>Cannot register to {0}: port already contains a registered user's data</MJUWE_PortThingComp_ErrorWeaponReg>
+    <MJUWE_PortThingComp_ErrorFormat>Cannot register to {0}: port is formatting</MJUWE_PortThingComp_ErrorFormat>
+    <MJUWE_PortThingComp_ErrorPawnReg>Cannot register to {0}:  mindjack already contains a registered weapon.</MJUWE_PortThingComp_ErrorPawnReg>
 
 
 </LanguageData>

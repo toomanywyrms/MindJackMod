@@ -8,6 +8,7 @@ using Verse;
 
 namespace MindJackMod
 {
+    //These are used to reference XML Defs in the code. Makes life easier.
     [DefOf]
     public static class MJUWE_DefOf
     {

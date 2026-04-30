@@ -27,11 +27,17 @@ namespace MindJackMod
         }
 
         //This Toil tells to pawn to go to the item "register" to ir for a few seconds, then calls in the methods used for the actual registration of the port to the weapon
+        //Toils are just a list of instructions, and when the toil is yield return'ed, it adds it to the list of instructions to do. When a job starts it does all the Toils
         protected override IEnumerable<Toil> MakeNewToils()
         {
 
+            //This fails the job if the weapon for some reason stops existing
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
+
+            //This tells the pawn to go to the weapon
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
+            
+            //This tells the pawn to wait and play a little hacking animation in the meantime
             yield return Toils_General.WaitWith(TargetIndex.A, finish)
                 .FailOnDestroyedNullOrForbidden(TargetIndex.A)
                 .FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch)
@@ -39,6 +45,8 @@ namespace MindJackMod
                 .PlaySoundAtStart(SoundDefOf.Hacking_Started)
                 .PlaySustainerOrSound(SoundDefOf.Hacking_InProgress)
                 .WithEffect(EffecterDefOf.Hacking, TargetIndex.A); ;
+
+            //This tells the game to run the registration process once the above wait is finished. I won't lie, at the time of writing, I still have no idea what delegate is
             yield return new Toil
             {
                 initAction = delegate
@@ -51,6 +59,7 @@ namespace MindJackMod
                         //registration
                         MJUWE_MindJack mindjack = (MJUWE_MindJack)hediff;
                         mindjack.registeredWeapon = TargetThingA;
+                        mindjack.isRegistered = true;
                         port.ConnectToPort(pawn, mindjack);
                         CompQuality wepQuality = TargetThingA.TryGetComp<CompQuality>();
 

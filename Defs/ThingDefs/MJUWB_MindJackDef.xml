@@ -5,8 +5,8 @@
       <label>mindjack</label>
       <labelNoun>a mindjack</labelNoun>
       <hediffClass>MindJackMod.MJUWE_MindJack</hediffClass>
-      <description>An installed mindjack, allowing the user to connect directly to a specialized weapon's Port, copying the unique markup of their brain and registering it with the onboard rudamentary AI. While the user is holding the reigistered weapon, their performance with the weapon is increased, and their state of mind is enhanced. Once installed, the user can not remove the mindjack, as it will result in irreperable damage to the brain, as well as potential death.\n\nThe user can format their mindjack to register it with a new weapon, however, their mental capacities will suffer while the format process runs.</description>
-      <initialSeverity>0.01</initialSeverity>
+      <description>An installed mindjack, allowing the user to connect directly to an unique weapon's port, registering their unique neural architecture to the weapon's rudimentary onboard AI. While the user is wielding the registered weapon, both the weapon's effectiveness and user's consciousness are improved.\n\nOnce installed, the mindjack cannot be uninstalled, as this would cause irreparable brain damage. However, the mindjack can be formatted to restore it to its initial state, allowing the user to register to a new weapon, at the cost of their mental capacities being dampened while the formatting process runs.</description>
+      <initialSeverity>0.001</initialSeverity>
       <isBad>false</isBad>
       <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
       <maxSeverity>4</maxSeverity>
@@ -51,7 +51,7 @@
   <ThingDef ParentName="BodyPartProstheticMakeableBase">
       <defName>MJUWE_MindJack</defName>
       <label>mindjack</label>
-      <description>An implant installed in the brain, allowing the user to connect directly to a specialized weapon's Port, copying the unique markup of their brain and registering it with the onboard rudamentary AI. While the user is holding the reigistered weapon, their performance with the weapon is increased, and their state of mind is enhanced. Once installed, the user can not remove the mindjack, as it will result in irreperable damage to the brain, as well as potential death.\n\nThe user can format their mindjack to register it with a new weapon, however, their mental capacities will suffer while the format process runs.</description>
+      <description>A mindjack implant designed to be installed in the brain, allowing the user to connect directly to an unique weapon's port, registering their unique neural architecture to the weapon's rudimentary onboard AI. While the user is wielding the registered weapon, both the weapon's effectiveness and user's consciousness are improved.\n\nOnce installed, the mindjack cannot be uninstalled, as this would cause irreparable brain damage. However, the mindjack can be formatted to restore it to its initial state, allowing the user to register to a new weapon, at the cost of their mental capacities being dampened while the formatting process runs</description>
       <descriptionHyperlinks><RecipeDef>MJUWE_InstallMindJack</RecipeDef></descriptionHyperlinks>
       <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
       <graphicData>
@@ -111,7 +111,7 @@
 
     <RecipeDef ParentName="SurgeryFlesh">
       <defName>MJUWE_FormatMindJack</defName>
-      <label>format Mindjack</label>
+      <label>format mindjack</label>
       <description>testing.</description>
       <workerClass>MindJackMod.MJUWE_SurgeryFormat</workerClass>
       <jobString>Formatting mindjack.</jobString>
