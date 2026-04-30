@@ -8,4 +8,12 @@
       </li>
     </value>
   </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Human"]/recipes</xpath>
+    <value>
+      <li>MJUWE_FormatMindJack</li>
+    </value>
+  </Operation>
+
 </Patch>

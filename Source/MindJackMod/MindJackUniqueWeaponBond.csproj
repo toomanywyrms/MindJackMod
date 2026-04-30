@@ -44,11 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MJUWB_DefOf.cs" />
-    <Compile Include="MJUWB_MindJackHediff.cs" />
-    <Compile Include="MJUWB_PortThingComp.cs" />
-    <Compile Include="MJUWB_Register.cs" />
+    <Compile Include="MJUWE_DefOf.cs" />
+    <Compile Include="MJUWE_MindJackHediff.cs" />
+    <Compile Include="MJUWE_PortThingComp.cs" />
+    <Compile Include="MJUWE_Register.cs" />
     <Compile Include="MJUWE_RegisterJob.cs" />
+    <Compile Include="MJUWE_SurgeryFormat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

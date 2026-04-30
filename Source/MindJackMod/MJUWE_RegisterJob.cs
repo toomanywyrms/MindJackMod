@@ -13,18 +13,20 @@ using static UnityEngine.GridBrushBase;
 namespace MindJackMod
 {
     //This is the Job that takes place whenever a Pawn tries to register a weapon
-    internal class MJUWE_RegisterJob : JobDriver
+    public class MJUWE_RegisterJob : JobDriver
     {
         public int finish = 1080;
         public const int tickProgression = GenTicks.TicksPerRealSecond;
         public int currentTick = 0;
         public float Progression => currentTick / finish;
 
-        //To be honest, I just took MakeNewToils() of the JobDiver_Hack and repurposed it.
+
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
             return pawn.Reserve(TargetThingA, job, 1, -1, null, errorOnFailed);
         }
+
+        //This Toil tells to pawn to go to the item "register" to ir for a few seconds, then calls in the methods used for the actual registration of the port to the weapon
         protected override IEnumerable<Toil> MakeNewToils()
         {
 
@@ -41,10 +43,12 @@ namespace MindJackMod
             {
                 initAction = delegate
                 {
+                    //gets hediff for later use
                     MJUWE_PortThingComp port = TargetThingA.TryGetComp<MJUWE_PortThingComp>();
-                    Log.Message("Here");
+                    //if statement just in case something breaks
                     if (pawn.health.hediffSet.TryGetHediff(MJUWE_DefOf.MJUWE_MindJackHediff, out Hediff hediff))
                     {
+                        //registration
                         MJUWE_MindJack mindjack = (MJUWE_MindJack)hediff;
                         mindjack.registeredWeapon = TargetThingA;
                         port.ConnectToPort(pawn, mindjack);

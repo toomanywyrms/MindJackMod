@@ -4,9 +4,9 @@
     <MJUWE_Bind>Bind with {0}</MJUWE_Bind>
     <MJUWE_PortThingComp_PortName>Port</MJUWE_PortThingComp_PortName>
     <MJUWE_PortThingComp_PortStateDisconnected>Disconnected</MJUWE_PortThingComp_PortStateDisconnected>
-    <MJUWE_PortThingComp_PortDescriptionDisconnected>A port used for a mind jack to neurocode with the user's unique brain markup. This enhances the user's capibilities with this weapon, as well as their overall state of mind\n\nThis weapon is not currently registered to any user's mind jack</MJUWE_PortThingComp_PortDescriptionDisconnected>
+    <MJUWE_PortThingComp_PortDescriptionDisconnected>A port used for a mindjack to neurocode with the user's unique brain markup. This enhances the user's capibilities with this weapon, as well as their overall state of mind\n\nThis weapon is not currently registered to any user's mindjack</MJUWE_PortThingComp_PortDescriptionDisconnected>
     <MJUWE_PortThingComp_PortStateConnectedValid>Registered ({0})</MJUWE_PortThingComp_PortStateConnectedValid>
-    <MJUWE_PortThingComp_PortDescriptionConnectedValid>A port used for a mind jack to neurocode with the user's unique brain markup. This enhances the user's capibilities with this weapon, as well as their overall state of mind\n\nThis weapon is currently registered to {0}'s mind jack</MJUWE_PortThingComp_PortDescriptionConnectedValid>
+    <MJUWE_PortThingComp_PortDescriptionConnectedValid>A port used for a mindjack to neurocode with the user's unique brain markup. This enhances the user's capibilities with this weapon, as well as their overall state of mind\n\nThis weapon is currently registered to {0}'s mindjack</MJUWE_PortThingComp_PortDescriptionConnectedValid>
 
 
 </LanguageData>

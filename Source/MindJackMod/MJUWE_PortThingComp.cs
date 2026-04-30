@@ -26,12 +26,12 @@ namespace MindJackUniqueWeaponBind
 
         }
 
-        //When the pawn registers the Mind Jack to the weapon's Port
+        //When the pawn registers the Mindjack to the weapon's Port
         public void ConnectToPort(Pawn pawn, MJUWE_MindJack mindjack)
         {
             isRegistered = true;
             registeredPawn = pawn;
-            mindjack.Severity = 3;
+            mindjack.Severity = 4;
 
         }
         //this is called when the Pawn equips a weapon. It checks if the current weapon is the bonded one
@@ -43,7 +43,7 @@ namespace MindJackUniqueWeaponBind
                 wepQuality.SetQuality(QualityCategory.Legendary, null);
                 pawn.health.hediffSet.TryGetHediff(MJUWE_DefOf.MJUWE_MindJackHediff, out Hediff hediff);
                 MJUWE_MindJack mindjack = (MJUWE_MindJack)hediff;
-                mindjack.Severity = 2;
+                mindjack.Severity = 3;
 
             }
         }
@@ -56,12 +56,12 @@ namespace MindJackUniqueWeaponBind
                 wepQuality.SetQuality(QualityCategory.Good, null);
                 pawn.health.hediffSet.TryGetHediff(MJUWE_DefOf.MJUWE_MindJackHediff, out Hediff hediff);
                 MJUWE_MindJack mindjack = (MJUWE_MindJack)hediff;
-                mindjack.Severity = 3;
+                mindjack.Severity = 4;
 
             }
         }
 
-        //saving relevant info
+        //this saves relevant info when user saves their game
         public override void PostExposeData()
         {
             base.PostExposeData();
