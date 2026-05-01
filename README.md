@@ -37,7 +37,7 @@ Art for the Mindjack implant and art used in this workshop page are made by the 
 TBA ARTIST CREDIT FOR BANNER  
 
 ## Special thanks  
-Rimworld discord for helping me make this mod a reality, and being patient as I learn the ins and outs of Rimworld's C# and XML structure
-Halicade for helping with testing
-Jessi for sacrificing her save file to test the mod mid playthrough
+Rimworld discord for helping me make this mod a reality, and being patient as I learn the ins and outs of Rimworld's C# and XML structure  
+Halicade for helping with testing  
+Jessi for sacrificing her save file to test the mod mid playthrough  
 
