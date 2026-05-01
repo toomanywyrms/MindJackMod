@@ -45,7 +45,7 @@ namespace MindJackUniqueWeaponBind
 
                 //double checks that the registered weapon in the mindjack is the same as this weapon
                 //if this check isn't done, a pawn could have 2 bonded weapons, as the weapon does not get formatted when the mindjack does
-                if (mindjack.registeredWeapon == parent)
+                if (mindjack?.registeredWeapon == parent && mindjack != null)
                 {
                     wepQuality.SetQuality(QualityCategory.Legendary, null);
                     mindjack.Severity = 3;
@@ -54,7 +54,7 @@ namespace MindJackUniqueWeaponBind
 
             }
         }
-        //this is called when the Pawn unequips or drops by down. It checks if the weapon dropped is the registered one one. If yes, remove buff
+        //this is called when the Pawn unequips or drops by down. It checks if the weapon dropped is the registered one one. If yes, remove buff.
         public override void Notify_Unequipped(Pawn pawn)
         {
             if (pawn == registeredPawn)
@@ -64,7 +64,7 @@ namespace MindJackUniqueWeaponBind
                 pawn.health.hediffSet.TryGetHediff(MJUWE_DefOf.MJUWE_MindJackHediff, out Hediff hediff);
                 MJUWE_MindJack mindjack = (MJUWE_MindJack)hediff;          
                 //see above
-                if (mindjack.registeredWeapon == parent)
+                if (mindjack?.registeredWeapon == parent)
                 {
                     wepQuality.SetQuality(QualityCategory.Good, null);
                     mindjack.Severity = 4;
@@ -77,8 +77,8 @@ namespace MindJackUniqueWeaponBind
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look(ref isRegistered, "bool");
-            Scribe_References.Look(ref registeredPawn, "pawn");
+            Scribe_Values.Look(ref isRegistered, "isRegistered");
+            Scribe_References.Look(ref registeredPawn, "registeredPawn");
         }
 
      }

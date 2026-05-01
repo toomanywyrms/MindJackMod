@@ -60,7 +60,7 @@ namespace MindJackMod
         }
 
         //This ticks every delta instead of every tick (still not 100% sure where the delta comes from) to reduce performance load. When the formatting starts, severity is set to 1, and this starts ticking
-        //down until it hits Severity 0.001 where it changes to (unregistered). It also checks if it's in that Severity so as to unregister the weapon once the formatting process finishes
+        //down until it hits Severity 0.001 where it changes to (unregistered). It also checks if it's in that Severity so as to unregister the weapon once the formatting process finishes.
         public override void PostTickInterval(int delta)
         {
             if (comps != null)
@@ -80,6 +80,13 @@ namespace MindJackMod
                     isRegistered = false;
                 }
             }
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref isRegistered, "isRegistered");
+            Scribe_References.Look(ref registeredWeapon, "registeredWeapon");
         }
 
     }

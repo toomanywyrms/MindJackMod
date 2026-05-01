@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-  <HediffDef>
-      <defName ParentName="ImplantHediffBase">MJUWE_MindJackHediff</defName>
+  <HediffDef ParentName="ImplantHediffBase">
+      <defName>MJUWE_MindJackHediff</defName>
       <label>mindjack</label>
       <labelNoun>a mindjack</labelNoun>
       <hediffClass>MindJackMod.MJUWE_MindJack</hediffClass>
