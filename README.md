@@ -26,6 +26,10 @@ For now, we do what we can to make do. In the Rim, every single bullet counts
 * While a weapon can only register a single unique user, the Mindjack can be formatted, allowing the user to be able to register a new weapon upon complition, at the cost of Consciousness being set maxxed at 90% while the formatting process happens over several days.
 * (TBD) Become a victim of a Mindjack raid, led by a raider holding a registered weapon. If you kill them, you still get a Good quality Unique Weapon. However, you might want to consider keeping them alive, and get the most out of the weapon once you get your hands on it
 
+## Known issues
+* Pawns incapable of violence can register the weapon, but cannot equip it. I will try to change this for release if possible
+* Ports can spawn on Neolithic and Medieval weapons. I don't think I need to explain why this is an issue
+
 ## Credits
 Code is available for use on Git Hub, and is very well documented. Feel free to use it as you learn modding, or for releasing new features. Please do not redestribute the code or the mod or try and claim it as your own.  
   
