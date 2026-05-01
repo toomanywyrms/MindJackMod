@@ -33,9 +33,7 @@ In testing
 
 ## Credits
 Code is available for use on Git Hub, and is very well documented. Feel free to use it as you learn modding, or for releasing new features. Please do not redestribute the code or the mod or try and claim it as your own.  
-  
 Art for the Mindjack implant and art used in this workshop page are made by the wonderful ItsHalno. Support them on (LINK TO ITSHALNO KOFI AND/OR STEAM)  
-  
 TBA ARTIST CREDIT FOR BANNER  
 
 ## Special thanks  
