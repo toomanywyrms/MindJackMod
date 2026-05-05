@@ -40,7 +40,10 @@ namespace MindJackMod
                 MJUWE_MindJack mindjack = (MJUWE_MindJack)hediff;
                 mindjack.Severity = 1f;
                 CompQuality weaponQuality = mindjack.registeredWeapon.TryGetComp<CompQuality>();
-                weaponQuality.SetQuality(QualityCategory.Good, null);
+                if(weaponQuality != null)
+                {
+                    weaponQuality.SetQuality(QualityCategory.Good, null);
+                }   
                 mindjack.registeredWeapon = null;
                 mindjack.isRegistered = false;
                 OnSurgerySuccess(pawn, part, billDoer, ingredients, bill);

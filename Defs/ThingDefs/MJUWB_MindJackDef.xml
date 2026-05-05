@@ -73,8 +73,8 @@
       <recipeMaker>
         <researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
       </recipeMaker>
-      <techHediffsTags>
-        <li>Advanced</li>
+      <techHediffsTags Inherit="False">
+        <li>MindJackTech</li>
       </techHediffsTags>
     </ThingDef>
 
@@ -132,5 +132,19 @@
       <driverClass>MindJackMod.MJUWE_RegisterJob</driverClass>
       <reportString>hacking TargetA.</reportString>
     </JobDef>
+
+    <WeaponCategoryDef>
+		<defName>MJUWE_PortWeapon</defName>
+    </WeaponCategoryDef>
+
+    
+  <PawnKindDef ParentName="MercenaryEliteBase">
+    <defName>Mercenary_Elite_Mindjack</defName>
+    <weaponTags Inherit="False">
+      <li>MJUWE_PortWeapon</li>
+    </weaponTags>
+    <weaponMoney>9999</weaponMoney>
+    <initialResistanceRange>15~23</initialResistanceRange>
+  </PawnKindDef>
 
   </Defs>
