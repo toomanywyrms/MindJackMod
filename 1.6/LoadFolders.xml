@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<loadFolders>
+  <v1.6>
+    <li>/</li>
+    <li>1.6</li>
+    <li IfModActive="Ludeon.RimWorld.Biotech">1.6/Mods/Biotech</li>
+    <li IfModActive="Ludeon.RimWorld.Anomaly">1.6/Mods/Anomaly</li>
+    <li IfModActive="vanillaexpanded.vwe">1.6/Mods/VanillaWeaponsExpanded</li>
+    <li IfModActive="vanillaexpanded.vwe">1.6/Mods/VanillaWeaponsExpandedQuickdraw</li>
+    <li IfModActive="sarg.alphaarmoury">1.6/Mods/AlphaArmoury</li>
+  </v1.6>
+</loadFolders>

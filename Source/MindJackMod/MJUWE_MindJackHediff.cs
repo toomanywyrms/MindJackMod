@@ -1,4 +1,5 @@
-﻿using Steamworks;
+﻿using MindJackUniqueWeaponBind;
+using Steamworks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +15,6 @@ namespace MindJackMod
         public bool isRegistered;
         public Thing registeredWeapon;
         public override float Severity { get => base.Severity; set => base.Severity = value; }
-        //I am jerry rigging the LabelInBrackets method in the Hediff_Addiction class
-        //Purpose is to display the % in the brackets when Mind jack is formatting
 
         //This sets the label colour to be red while in the formatting stage
         public override Color LabelColor
@@ -37,6 +36,8 @@ namespace MindJackMod
         {
             get
             {
+                //I am jerry rigging the LabelInBrackets method in the Hediff_Addiction class
+                //Purpose is to display the % in the brackets when Mindjack is formatting
                 string labelInBrackets = base.LabelInBrackets;
                 if (Severity > 0.002 && Severity <= 1)
                 {
@@ -56,6 +57,22 @@ namespace MindJackMod
                     return registeredWeapon.Label + ", " + labelInBrackets;
                 }
                     return labelInBrackets;
+            }
+        }
+
+        //In order to have my mindjack raider all set up, this methods needs to be called when the Hediff is spawned. If the owner of the Hediff has my mod extention
+        //(which I use to identify them), it runs this method to have them linked with the weapon the exact second they spawn
+        public override void Notify_Spawned()
+        {
+            base.Notify_Spawned();
+            if (pawn.kindDef.HasModExtension<MJUWE_DefModExtension>())
+            {
+                isRegistered = true;
+                registeredWeapon = pawn.equipment.Primary;
+                MJUWE_PortThingComp port = registeredWeapon.TryGetComp<MJUWE_PortThingComp>();
+                port.isRegistered = true;
+                port.registeredPawn = pawn;
+                port.Notify_Equipped(pawn);
             }
         }
 
@@ -82,6 +99,7 @@ namespace MindJackMod
             }
         }
 
+        //for saving information into the save file
         public override void ExposeData()
         {
             base.ExposeData();

@@ -73,8 +73,10 @@
       <recipeMaker>
         <researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
       </recipeMaker>
+      <isTechHediff>true</isTechHediff>
       <techHediffsTags Inherit="False">
-        <li>MindJackTech</li>
+        <!--<li>MJUWE_MindJack</li>-->
+        <li>Advanced</li>
       </techHediffsTags>
     </ThingDef>
 
@@ -138,13 +140,62 @@
     </WeaponCategoryDef>
 
     
-  <PawnKindDef ParentName="MercenaryEliteBase">
+  <PawnKindDef ParentName="MercenaryEliteTierBase">
     <defName>Mercenary_Elite_Mindjack</defName>
+    <label>mindjack mercenary</label>
+    <labelPlural>mindjack mercenaries</labelPlural>
     <weaponTags Inherit="False">
       <li>MJUWE_PortWeapon</li>
     </weaponTags>
-    <weaponMoney>9999</weaponMoney>
+    <weaponMoney>9999999</weaponMoney>
+    <apparelMoney>9999999</apparelMoney>
+    <techHediffsMoney>99999999</techHediffsMoney>
+    <combatPower>400</combatPower>
+    <techHediffsRequired>
+      <li>MJUWE_MindJack</li>
+    </techHediffsRequired>
     <initialResistanceRange>15~23</initialResistanceRange>
+    <modExtensions>
+            <li Class="MindJackMod.MJUWE_DefModExtension">
+                <isMindjackRaider>true</isMindjackRaider>
+            </li>
+        </modExtensions>
   </PawnKindDef>
+
+   <RaidStrategyDef ParentName="ImmediateAttack">
+    <defName>MJUWE_MindjackRaid</defName>
+    <workerClass>MindJackMod.MJUWE_RaidStrategyWorker_ImmediateAttackMindjack</workerClass>
+     <selectionWeightPerPointsCurve>
+      <points>
+        <li>(0, 1)</li>
+      </points>
+    </selectionWeightPerPointsCurve>
+    <selectionWeightCurvesPerFaction>
+      <li>
+        <faction>Mechanoid</faction>
+        <selectionWeightPerPointsCurve>
+          <points>
+            <li>(0, 0)</li>
+          </points>
+        </selectionWeightPerPointsCurve>
+      </li>
+    </selectionWeightCurvesPerFaction>
+    <pointsFactorCurve>
+      <points>
+        <li>0, 1</li>
+      </points>
+    </pointsFactorCurve>
+    <arriveModes>
+      <li>EdgeDrop</li>
+      <li>EdgeWalkIn</li>
+      <li>CenterDrop</li>
+      <li>RandomDrop</li>
+      <li>EdgeDropGroups</li>
+      <li>EdgeWalkInGroups</li>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">EdgeWalkInDarkness</li>
+    </arriveModes>
+    <letterLabelEnemy>Mindjack Raid</letterLabelEnemy>
+    <arrivalTextEnemy>The raid seems to be led by a Mindjack user. The agent has enhanced combat capabilities, making eliminating or capturing them a high priority</arrivalTextEnemy>
+    </RaidStrategyDef>
 
   </Defs>

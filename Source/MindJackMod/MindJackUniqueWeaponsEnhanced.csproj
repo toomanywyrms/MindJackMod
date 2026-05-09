@@ -44,9 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MJUWE_DefModExtension.cs" />
     <Compile Include="MJUWE_DefOf.cs" />
     <Compile Include="MJUWE_MindJackHediff.cs" />
     <Compile Include="MJUWE_PortThingComp.cs" />
+    <Compile Include="MJUWE_RaidStrategyWorker.cs" />
     <Compile Include="MJUWE_Register.cs" />
     <Compile Include="MJUWE_RegisterJob.cs" />
     <Compile Include="MJUWE_SurgeryFormat.cs" />

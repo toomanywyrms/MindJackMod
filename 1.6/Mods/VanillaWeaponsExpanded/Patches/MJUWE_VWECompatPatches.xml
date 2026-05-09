@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <!-- <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[not(@ParentName="VWE_Crossbow_Base")]/comps/li[@Class="MindJackUniqueWeaponBind.MJUWE_PortThingComp"]</xpath>
+    <nomatch Class="PatchOperationInsert">
+      <xpath>Defs/ThingDef[not(@ParentName="VWE_Crossbow_Base")]/comps/li[@Class="CompProperties_UniqueWeapon"]</xpath>
+        <value>
+            <li>
+                <compClass>MindJackUniqueWeaponBind.MJUWE_PortThingComp</compClass>
+            </li>
+        </value>
+    </nomatch>
+  </Operation> -->
+
+
+    <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Bow_Compound_Unique"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Bow_Compound_Unique"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Bow_Compound_Unique"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Bow_Compound_Unique"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_HandCannon_Unique"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_HandCannon_Unique"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_HandCannon_Unique"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_HandCannon_Unique"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_CombatHandgun_Unique"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_CombatHandgun_Unique"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_CombatHandgun_Unique"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_CombatHandgun_Unique"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_SemiAutomaticRifle_Unique"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_SemiAutomaticRifle_Unique"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_SemiAutomaticRifle_Unique"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_SemiAutomaticRifle_Unique"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_LeverActionRifle_Unique"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_LeverActionRifle_Unique"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_LeverActionRifle_Unique"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_LeverActionRifle_Unique"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Base"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Base"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Base"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Base"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Base"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Base"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Base"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Base"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_SMG_Unique"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_SMG_Unique"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_SMG_Unique"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_SMG_Unique"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_HMG_Unique"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_HMG_Unique"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_HMG_Unique"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_HMG_Unique"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_ServiceRifle_Unique"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_ServiceRifle_Unique"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_ServiceRifle_Unique"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_ServiceRifle_Unique"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_BattleRifle_Unique"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_BattleRifle_Unique"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_BattleRifle_Unique"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_BattleRifle_Unique"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_Carbine_Unique"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_Carbine_Unique"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_Carbine_Unique"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_Carbine_Unique"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_MarksmanRifle_Unique"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_MarksmanRifle_Unique"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_MarksmanRifle_Unique"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_MarksmanRifle_Unique"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_AntiMaterialRifle_Unique"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_AntiMaterialRifle_Unique"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_AntiMaterialRifle_Unique"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_AntiMaterialRifle_Unique"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeShotgun_Unique"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeShotgun_Unique"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeShotgun_Unique"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeShotgun_Unique"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeSMG_Unique"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeSMG_Unique"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeSMG_Unique"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeSMG_Unique"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeLMG_Unique"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeLMG_Unique"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeLMG_Unique"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeLMG_Unique"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeMinigun_Unique"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeMinigun_Unique"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeMinigun_Unique"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeMinigun_Unique"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeSniperRifle_Unique"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeSniperRifle_Unique"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeSniperRifle_Unique"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VWE_Gun_ChargeSniperRifle_Unique"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+</Patch>

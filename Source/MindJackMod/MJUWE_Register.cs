@@ -13,7 +13,7 @@ namespace MindJackUniqueWeaponBind
         protected override bool Undrafted => true;
         protected override bool Multiselect => false;
 
-        //Adding the context menu item to allow Binding
+        //Adding the context menu item to allow Registration
         protected override FloatMenuOption GetSingleOptionFor(Thing clickedThing, FloatMenuContext context)
         {
             Pawn currentPawn = context.FirstSelectedPawn;
@@ -56,7 +56,7 @@ namespace MindJackUniqueWeaponBind
                     return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(
                         "MJUWE_Bind".Translate(clickedThing.Label), () =>
                         {
-                            //This calls the job that bonds upon completion
+                            //This calls the job that registers upon completion
 
                             Job job = JobMaker.MakeJob(MJUWE_DefOf.MJUWE_MindJackRegistration,
                                 new LocalTargetInfo(clickedThing));

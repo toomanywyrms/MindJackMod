@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-    <name>Mindjack: Unique Weapon Bond</name>
+    <name>Mindjack: Unique Weapons Enchanced</name>
     <author>toomanywyrms</author>
 	<packageId>TWM.MJUWE</packageId>
     <supportedVersions>
         <li>1.6</li>
     </supportedVersions>
-    <description>Bond weapons and shit. Cool as fuck</description>
+    <description>Mindjack: Unique Weapons Enhanced adds some flavour to the unique weapons in Odyssey with it's own twist on the weapon bond system: 
+        
+- Craft or purchase the Mindjack brain implant.
+- Register your Mindjack to the rudimentary AI via the weapon's Port. 
+- While the weapon is equipped, enjoy enhanced performance both in and out of combat.
+- The weapon can still be used by others, however, at a greatly reduced efficiency.
+- Format your Mindjack to register a new weapon. However, be advised a registered weapon can never be re-registered, even to its old user.</description>
     <modDependencies>
         <li>
             <packageId>Ludeon.RimWorld.Odyssey</packageId>
@@ -14,6 +20,11 @@
         </li>
     </modDependencies>
     <loadAfter>
-         <li>Ludeon.RimWorld.Odyssey</li>
+        <li>Ludeon.RimWorld.Biotech</li>
+        <li>Ludeon.RimWorld.Anomaly</li>
+        <li>Ludeon.RimWorld.Odyssey</li>
+        <li>vanillaexpanded.vwe</li>
+        <li>vanillaexpanded.vweq</li>
+        <li>sarg.alphaarmoury</li>
     </loadAfter>
 </ModMetaData>
