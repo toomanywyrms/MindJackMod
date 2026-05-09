@@ -162,9 +162,9 @@
         </modExtensions>
   </PawnKindDef>
 
-   <RaidStrategyDef ParentName="ImmediateAttack">
+   <RaidStrategyDef>
     <defName>MJUWE_MindjackRaid</defName>
-    <workerClass>MindJackMod.MJUWE_RaidStrategyWorker_ImmediateAttackMindjack</workerClass>
+    <workerClass>MindJackMod.MJUWE_RaidStrategyWorker_MindjackRaid</workerClass>
      <selectionWeightPerPointsCurve>
       <points>
         <li>(0, 1)</li>
@@ -192,7 +192,6 @@
       <li>RandomDrop</li>
       <li>EdgeDropGroups</li>
       <li>EdgeWalkInGroups</li>
-      <li MayRequire="Ludeon.RimWorld.Anomaly">EdgeWalkInDarkness</li>
     </arriveModes>
     <letterLabelEnemy>Mindjack Raid</letterLabelEnemy>
     <arrivalTextEnemy>The raid seems to be led by a Mindjack user. The agent has enhanced combat capabilities, making eliminating or capturing them a high priority</arrivalTextEnemy>

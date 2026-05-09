@@ -135,9 +135,9 @@
   </Operation>
 
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Base"]/weaponTags</xpath>
+    <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Unique"]/weaponTags</xpath>
     <nomatch Class="PatchOperationAdd">
-      <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Base"]</xpath>
+      <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Unique"]</xpath>
       <value>
         <weaponTags Inherit="False">
           <li>MJUWE_PortWeapon</li>
@@ -145,23 +145,23 @@
       </value>
     </nomatch>
     <match Class="PatchOperationAdd">
-      <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Base"]/weaponTags</xpath>
+      <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Unique"]/weaponTags</xpath>
         <value>
           <li>MJUWE_PortWeapon</li>
         </value>
     </match>
   </Operation>
    <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Base"]/generateAllowChance</xpath>
+    <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Unique"]/generateAllowChance</xpath>
     <value>
       <generateAllowChance>1</generateAllowChance>
     </value>
   </Operation>
 
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Base"]/weaponTags</xpath>
+    <xpath>Defs/ThingDef[defName="VWE_Gun_LightSMG_Unique"]/weaponTags</xpath>
     <nomatch Class="PatchOperationAdd">
-      <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Base"]</xpath>
+      <xpath>Defs/ThingDef[defName="VWE_Gun_LightSMG_Unique"]</xpath>
       <value>
         <weaponTags Inherit="False">
           <li>MJUWE_PortWeapon</li>
@@ -169,14 +169,14 @@
       </value>
     </nomatch>
     <match Class="PatchOperationAdd">
-      <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Base"]/weaponTags</xpath>
+      <xpath>Defs/ThingDef[defName="VWE_Gun_LightSMG_Unique"]/weaponTags</xpath>
         <value>
           <li>MJUWE_PortWeapon</li>
         </value>
     </match>
   </Operation>
    <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="VWE_Gun_TrenchGun_Base"]/generateAllowChance</xpath>
+    <xpath>Defs/ThingDef[defName="VWE_Gun_LightSMG_Unique"]/generateAllowChance</xpath>
     <value>
       <generateAllowChance>1</generateAllowChance>
     </value>
