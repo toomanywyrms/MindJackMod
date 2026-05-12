@@ -19,7 +19,7 @@ Eventually, that technology was lost to time, surpassed by ultratech and glitter
 * Unique weapons can only ever register to a single user: If the user dies or the registration is formatted, that weapon cannot be registered to a new user, and will be stuck at Good or lower quality instead.
 * When the pawn has their registered weapon equipped, they will also enjoy a flat 10% bonus to their Consciousness.
 * The Mindjack can only support a single registered weapon at a time. However, you do have the option of formatting the mindjack to allow a new weapon to be registered. This process takes several days and negatively affects the pawn’s consciousness by keeping it at 90% maximum.
-* (TBD) Become a victim of a Mindjack raid, led by a raider holding a registered weapon. If you kill them, you still get a Good quality Unique Weapon. However, you might want to consider keeping them alive, and get the most out of the weapon once you get your hands on it
+* Become a victim of a Mindjack raid, led by a raider holding a registered weapon. If you kill them, you still get a Good quality Unique Weapon. However, you might want to consider keeping them alive, and get the most out of the weapon once you get your hands on it
 
 ## Prerequisites
 Odyssey: Required. The mod only affects the unique weapons added by the DLC.
