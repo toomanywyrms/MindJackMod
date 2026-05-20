@@ -155,6 +155,7 @@
       <li>MJUWE_MindJack</li>
     </techHediffsRequired>
     <initialResistanceRange>15~23</initialResistanceRange>
+    <biocodeWeaponChance>0</biocodeWeaponChance>
     <modExtensions>
             <li Class="MindJackMod.MJUWE_DefModExtension">
                 <isMindjackRaider>true</isMindjackRaider>
@@ -194,7 +195,7 @@
       <li>EdgeWalkInGroups</li>
     </arriveModes>
     <letterLabelEnemy>Mindjack Raid</letterLabelEnemy>
-    <arrivalTextEnemy>The raid seems to be led by a Mindjack user. The agent has enhanced combat capabilities, making eliminating or capturing them a high priority</arrivalTextEnemy>
+    <arrivalTextEnemy>The raid seems to be led by a Mindjack user, who has enhanced combat capabilities. Eliminating or capturing them should be a high priority</arrivalTextEnemy>
     </RaidStrategyDef>
 
   </Defs>
