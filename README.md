@@ -1,3 +1,5 @@
+<img width="5000" height="2813" alt="MJUWEPreview" src="https://github.com/user-attachments/assets/7cfc5b02-caac-43d6-b66c-0e495f0c105a" />
+
 # Mindjack: Unique Weapons Enhanced
 
 ## About
