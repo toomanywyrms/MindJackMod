@@ -23,20 +23,9 @@ Eventually, that technology was lost to time, surpassed by ultratech and glitter
 * The Mindjack can only support a single registered weapon at a time. However, you do have the option of formatting the mindjack to allow a new weapon to be registered. This process takes several days and negatively affects the pawn’s consciousness by keeping it at 90% maximum.
 * Become a victim of a Mindjack raid, led by a raider holding a registered weapon. If you kill them, you still get a Good quality Unique Weapon. However, you might want to consider keeping them alive, and get the most out of the weapon once you get your hands on it
 
-## Prerequisites
-Odyssey: Required. The mod only affects the unique weapons added by the DLC.
-
-## Known issues
-* Pawns incapable of violence can register the weapon, but cannot equip it. I will try to change this for release if possible
-* Ports can spawn on Neolithic and Medieval weapons. I don't think I need to explain why this is an issue
-
-## Compatibility
-In testing
-
 ## Credits
-Code is available for use on Git Hub, and is very well documented. Feel free to use it as you learn modding, or for releasing new features. Please do not redestribute the code or the mod or try and claim it as your own.  
-Art for the Mindjack implant and art used in this workshop page are made by the wonderful ItsHalno. Support them on (LINK TO ITSHALNO KOFI AND/OR STEAM)  
-TBA ARTIST CREDIT FOR BANNER  
+Art for the Mindjack implant and art used in this workshop page are made by the wonderful ItsHalno. Support them on https://ko-fi.com/itshalno
+Preview art created by the incredibly talented Immortalus. Support them on https://ko-fi.com/immortalus
 
 ## Special thanks  
 Rimworld discord for helping me make this mod a reality, and being patient as I learn the ins and outs of Rimworld's C# and XML structure  
