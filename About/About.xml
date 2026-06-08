@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-    <name>Mindjack: Unique Weapons Enchanced</name>
+    <name>Mindjack: Unique Weapons Enhanced</name>
     <author>toomanywyrms</author>
 	<packageId>TWM.MJUWE</packageId>
     <supportedVersions>
         <li>1.6</li>
     </supportedVersions>
-    <description>Mindjack: Unique Weapons Enhanced adds some flavour to the unique weapons in Odyssey with it's own twist on the weapon bond system: 
+    <description>Mindjack: Unique Weapons Enhanced adds some flavour to the unique weapons in Odyssey with its own twist on the weapon bond system: 
         
 - Craft or purchase the Mindjack brain implant.
 - Register your Mindjack to the rudimentary AI via the weapon's Port. 
