@@ -1,20 +1,18 @@
 ﻿using MindJackMod;
 using RimWorld;
-using System;
-using UnityEngine;
 using Verse;
 using Verse.AI;
 
 namespace MindJackUniqueWeaponBind
 {
-    public class MJUBW_RegisterToWeapon : FloatMenuOptionProvider
+    public class MJUWE_RegisterToWeapon : FloatMenuOptionProvider
     {
-        protected override bool Drafted => true;
-        protected override bool Undrafted => true;
-        protected override bool Multiselect => false;
+        public override bool Drafted => true;
+        public override bool Undrafted => true;
+        public override bool Multiselect => false;
 
         //Adding the context menu item to allow Registration
-        protected override FloatMenuOption GetSingleOptionFor(Thing clickedThing, FloatMenuContext context)
+        public override FloatMenuOption GetSingleOptionFor(Thing clickedThing, FloatMenuContext context)
         {
             Pawn currentPawn = context.FirstSelectedPawn;
             //This checks if the selected weapon has a Port and Pawn has a mindjack installed
@@ -24,7 +22,11 @@ namespace MindJackUniqueWeaponBind
                 //We need to check if the Pawn can actually register
                 MJUWE_MindJack mindjack = (MJUWE_MindJack)hediff;
                 MJUWE_PortThingComp port = clickedThing.TryGetComp<MJUWE_PortThingComp>();
-            
+
+                if (currentPawn.WorkTagIsDisabled(WorkTags.Violent))
+                {   
+                    return new FloatMenuOption("MJUWE_PortThingComp_ErrorPawnNoViolent".Translate(clickedThing.Label, currentPawn.LabelShort), null);
+                }
                 //in case of pawn formatting
                 if(mindjack.Severity > 0.002 && mindjack.Severity <= 1)
                 {
@@ -62,9 +64,8 @@ namespace MindJackUniqueWeaponBind
                                 new LocalTargetInfo(clickedThing));
                             context.FirstSelectedPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
                         }), context.FirstSelectedPawn, clickedThing);
-          
-                    }
-                    }
+                }
+            }
             return null;
             }
         }

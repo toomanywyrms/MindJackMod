@@ -1,10 +1,4 @@
 ﻿using MindJackUniqueWeaponBind;
-using Steamworks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
 
@@ -14,7 +8,6 @@ namespace MindJackMod
     {
         public bool isRegistered;
         public Thing registeredWeapon;
-        public override float Severity { get => base.Severity; set => base.Severity = value; }
 
         //This sets the label colour to be red while in the formatting stage
         public override Color LabelColor
@@ -24,7 +17,6 @@ namespace MindJackMod
                 if (Severity > 0.002 && Severity <= 1)
                 {
                     color = Color.red;
-                    return color;
                 }
                 return color;
 
@@ -56,9 +48,26 @@ namespace MindJackMod
                 {
                     return registeredWeapon.Label + ", " + labelInBrackets;
                 }
-                    return labelInBrackets;
+                return labelInBrackets;
             }
         }
+        
+        //changing description to add a variation for the corrupted stage
+
+        public override string Description
+        {
+            get
+            {
+                string description = base.Description;
+                if (Severity == 5)
+                {
+                    return description + "\n\n" + "MJUWE_Heddiff_CorruptedDescription".Translate();
+                }
+
+                return description;
+            }
+        }
+
 
         //In order to have my mindjack raider all set up, this methods needs to be called when the Hediff is spawned. If the owner of the Hediff has my mod extention
         //(which I use to identify them), it runs this method to have them linked with the weapon the exact second they spawn

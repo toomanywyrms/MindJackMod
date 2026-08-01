@@ -5,11 +5,11 @@
       <label>mindjack</label>
       <labelNoun>a mindjack</labelNoun>
       <hediffClass>MindJackMod.MJUWE_MindJack</hediffClass>
-      <description>An installed mindjack, allowing the user to connect directly to an unique weapon's port, registering their unique neural architecture to the weapon's rudimentary onboard AI. While the user is wielding the registered weapon, both the weapon's effectiveness and user's consciousness are improved.\n\nOnce installed, the mindjack cannot be uninstalled, as this would cause irreparable brain damage. However, the mindjack can be formatted to restore it to its initial state, allowing the user to register to a new weapon, at the cost of their mental capacities being dampened while the formatting process runs.</description>
+      <description>An installed mindjack, allowing the user to connect directly to a unique weapon's port, registering their unique neural architecture to the weapon's rudimentary onboard AI. While the user is wielding the registered weapon, both the weapon's effectiveness and user's consciousness are improved.\n\nOnce installed, the mindjack cannot be uninstalled, as this would cause irreparable brain damage. However, the mindjack can be formatted to restore it to its initial state, allowing the user to register to a new weapon, at the cost of their mental capacities being dampened while the formatting process runs.</description>
       <initialSeverity>0.001</initialSeverity>
       <isBad>false</isBad>
       <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
-      <maxSeverity>4</maxSeverity>
+      <maxSeverity>5</maxSeverity>
       <countsAsAddedPartOrImplant>true</countsAsAddedPartOrImplant>
       <comps>
         <li Class="HediffCompProperties_SeverityPerDay">
@@ -44,7 +44,11 @@
          <li>
             <label>disconnected</label>
             <minSeverity>4</minSeverity>
-         </li>   
+         </li>
+          <li>
+              <label>corrupted</label>
+              <minSeverity>5</minSeverity>
+          </li>
       </stages>
     </HediffDef>
 

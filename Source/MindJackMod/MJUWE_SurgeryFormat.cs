@@ -1,10 +1,5 @@
-﻿using MindJackUniqueWeaponBind;
-using RimWorld;
-using System;
+﻿using RimWorld;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 
 namespace MindJackMod
@@ -25,7 +20,6 @@ namespace MindJackMod
                 {
                     return base.AvailableOnNow(thing, part);
                 }
-                return false;
             }
             return false;
         }
@@ -34,7 +28,8 @@ namespace MindJackMod
         {
             if (billDoer != null)
             {
-                //very simple, sets Severity to 1 which is what the formatting state is, and removes the weapon data. We also change the quality of the weapon in case it's equipped
+                //very simple, sets Severity to 1 which is what the formatting state is, and removes the weapon data.
+                //We also change the quality of the weapon in case it's equipped
                 //The OnSurgerySuccess i think is just for the game to have relevant info about the successful operation
                 pawn.health.hediffSet.TryGetHediff(MJUWE_DefOf.MJUWE_MindJackHediff, out Hediff hediff);
                 MJUWE_MindJack mindjack = (MJUWE_MindJack)hediff;
@@ -44,7 +39,6 @@ namespace MindJackMod
                 {
                     weaponQuality.SetQuality(QualityCategory.Good, null);
                 }   
-                mindjack.registeredWeapon = null;
                 mindjack.isRegistered = false;
                 OnSurgerySuccess(pawn, part, billDoer, ingredients, bill);
             }

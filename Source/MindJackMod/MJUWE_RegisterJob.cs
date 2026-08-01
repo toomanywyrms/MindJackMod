@@ -1,14 +1,8 @@
 ﻿using MindJackUniqueWeaponBind;
 using RimWorld;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 using Verse.AI;
-using Verse.Sound;
-using static UnityEngine.GridBrushBase;
 
 namespace MindJackMod
 {
@@ -28,7 +22,7 @@ namespace MindJackMod
 
         //This Toil tells to pawn to go to the item "register" to ir for a few seconds, then calls in the methods used for the actual registration of the port to the weapon
         //Toils are just a list of instructions, and when the toil is yield return'ed, it adds it to the list of instructions to do. When a job starts it does all the Toils
-        protected override IEnumerable<Toil> MakeNewToils()
+        public override IEnumerable<Toil> MakeNewToils()
         {
 
             //This fails the job if the weapon for some reason stops existing

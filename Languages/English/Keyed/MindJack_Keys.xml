@@ -9,7 +9,9 @@
     <MJUWE_PortThingComp_PortDescriptionConnectedValid>A port for connecting directly with a user's mindjack. This process registers the users unique neural architecture into the weapon's rudimentary onboard AI, improving the effectiveness of both the weapon and the registered user.\n\nThis weapon is currently registered to {0}, and cannot be used at full effectiveness by anyone except them.</MJUWE_PortThingComp_PortDescriptionConnectedValid>
     <MJUWE_PortThingComp_ErrorWeaponReg>Cannot register to {0}: port already contains a registered user's data</MJUWE_PortThingComp_ErrorWeaponReg>
     <MJUWE_PortThingComp_ErrorFormat>Cannot register to {0}: port is formatting</MJUWE_PortThingComp_ErrorFormat>
-    <MJUWE_PortThingComp_ErrorPawnReg>Cannot register to {0}:  mindjack already contains a registered weapon.</MJUWE_PortThingComp_ErrorPawnReg>
+    <MJUWE_PortThingComp_ErrorPawnReg>Cannot register to {0}:  mindjack already contains a registered weapon</MJUWE_PortThingComp_ErrorPawnReg>
+    <MJUWE_PortThingComp_ErrorPawnNoViolent>Cannot register to {0}: {1} is incapable of violence</MJUWE_PortThingComp_ErrorPawnNoViolent>
+    <MJUWE_Heddiff_CorruptedDescription>For one reason or another, the mindjack has become corrupted and will no longer work. Your only solution is to format it</MJUWE_Heddiff_CorruptedDescription>
 
 
 </LanguageData>

@@ -1,10 +1,6 @@
 ﻿using MindJackMod;
 using RimWorld;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 
 namespace MindJackUniqueWeaponBind
@@ -45,7 +41,7 @@ namespace MindJackUniqueWeaponBind
 
                 //double checks that the registered weapon in the mindjack is the same as this weapon
                 //if this check isn't done, a pawn could have 2 bonded weapons, as the weapon does not get formatted when the mindjack does
-                if (mindjack?.registeredWeapon == parent && mindjack != null)
+                if (mindjack?.registeredWeapon == parent)
                 {
                     wepQuality.SetQuality(QualityCategory.Legendary, null);
                     mindjack.Severity = 3;
@@ -71,6 +67,13 @@ namespace MindJackUniqueWeaponBind
                 }
 
             }
+        }
+
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
+        {
+            registeredPawn.health.hediffSet.TryGetHediff(MJUWE_DefOf.MJUWE_MindJackHediff, out Hediff hediff);
+            MJUWE_MindJack mindjack = (MJUWE_MindJack)hediff;
+            mindjack.Severity = 5;
         }
 
         //this saves relevant info when user saves their game
