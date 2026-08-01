@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Patch>
-
-    <!-- <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[not(@ParentName="VWE_Crossbow_Base")]/comps/li[@Class="MindJackUniqueWeaponBind.MJUWE_PortThingComp"]</xpath>
-    <nomatch Class="PatchOperationInsert">
-      <xpath>Defs/ThingDef[not(@ParentName="VWE_Crossbow_Base")]/comps/li[@Class="CompProperties_UniqueWeapon"]</xpath>
-        <value>
-            <li>
-                <compClass>MindJackUniqueWeaponBind.MJUWE_PortThingComp</compClass>
-            </li>
-        </value>
-    </nomatch>
-  </Operation> -->
-
-
     <Operation Class="PatchOperationConditional">
     <xpath>Defs/ThingDef[defName="VWE_Bow_Compound_Unique"]/weaponTags</xpath>
     <nomatch Class="PatchOperationAdd">
