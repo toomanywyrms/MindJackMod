@@ -8,6 +8,7 @@ namespace MindJackMod
     {
         public bool isRegistered;
         public Thing registeredWeapon;
+        public bool hasSpawned = false;
 
         //This sets the label colour to be red while in the formatting stage
         public override Color LabelColor
@@ -71,10 +72,11 @@ namespace MindJackMod
 
         //In order to have my mindjack raider all set up, this methods needs to be called when the Hediff is spawned. If the owner of the Hediff has my mod extention
         //(which I use to identify them), it runs this method to have them linked with the weapon the exact second they spawn
+        //hasSpawned is to make sure it only triggers once (primarily bc the game respawns a Pawn when you capture it)
         public override void Notify_Spawned()
         {
             base.Notify_Spawned();
-            if (pawn.kindDef.HasModExtension<MJUWE_DefModExtension>())
+            if (pawn.kindDef.HasModExtension<MJUWE_DefModExtension>() && !hasSpawned)
             {
                 isRegistered = true;
                 registeredWeapon = pawn.equipment.Primary;
@@ -82,6 +84,7 @@ namespace MindJackMod
                 port.isRegistered = true;
                 port.registeredPawn = pawn;
                 port.Notify_Equipped(pawn);
+                hasSpawned = true;
             }
         }
 
@@ -104,6 +107,11 @@ namespace MindJackMod
                 {
                     registeredWeapon = null;
                     isRegistered = false;
+                }
+
+                if (registeredWeapon == null && isRegistered)
+                {
+                    Severity = 5;
                 }
             }
         }

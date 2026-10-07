@@ -71,9 +71,17 @@ namespace MindJackUniqueWeaponBind
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
-            registeredPawn.health.hediffSet.TryGetHediff(MJUWE_DefOf.MJUWE_MindJackHediff, out Hediff hediff);
-            MJUWE_MindJack mindjack = (MJUWE_MindJack)hediff;
-            mindjack.Severity = 5;
+
+            if (registeredPawn != null)
+            {
+                registeredPawn.health.hediffSet.TryGetHediff(MJUWE_DefOf.MJUWE_MindJackHediff, out Hediff hediff);
+                MJUWE_MindJack mindjack = (MJUWE_MindJack)hediff;
+                if (mindjack != null)
+                {
+                    mindjack.Severity = 5;
+                }
+            }
+
         }
 
         //this saves relevant info when user saves their game
