@@ -36,7 +36,7 @@ namespace MindJackUniqueWeaponBind
                 //in case the weapon is already registered to someone else (including the same user if they formatted)
                 if (port.isRegistered)
                 {
-                    if (port.registeredPawn != currentPawn || (port.registeredPawn != currentPawn && !mindjack.isRegistered))
+                    if (port.registeredPawn != currentPawn || (port.registeredPawn == currentPawn && !mindjack.isRegistered))
                     {
                         return new FloatMenuOption("MJUWE_PortThingComp_ErrorWeaponReg".Translate(clickedThing.Label), null);
                     }

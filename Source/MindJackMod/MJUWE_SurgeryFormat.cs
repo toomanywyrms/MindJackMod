@@ -40,6 +40,7 @@ namespace MindJackMod
                     weaponQuality.SetQuality(QualityCategory.Good, null);
                 }   
                 mindjack.isRegistered = false;
+                mindjack.registeredWeapon = null;
                 OnSurgerySuccess(pawn, part, billDoer, ingredients, bill);
             }
         }
