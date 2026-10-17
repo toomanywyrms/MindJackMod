@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <HediffDef ParentName="ImplantHediffBase">
+      <defName>MJUWE_MindJackHediff</defName>
+      <label>mindjack</label>
+      <labelNoun>a mindjack</labelNoun>
+      <hediffClass>MindJackMod.MJUWE_MindJack</hediffClass>
+      <description>An installed mindjack, allowing the user to connect directly to a unique weapon's port, registering their unique neural architecture to the weapon's rudimentary onboard AI. While the user is wielding the registered weapon, both the weapon's effectiveness and user's consciousness are improved.\n\nOnce installed, the mindjack cannot be uninstalled, as this would cause irreparable brain damage. However, the mindjack can be formatted to restore it to its initial state, allowing the user to register to a new weapon, at the cost of their mental capacities being dampened while the formatting process runs.</description>
+      <initialSeverity>0.001</initialSeverity>
+      <isBad>false</isBad>
+      <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
+      <maxSeverity>5</maxSeverity>
+      <countsAsAddedPartOrImplant>true</countsAsAddedPartOrImplant>
+      <comps>
+        <li Class="HediffCompProperties_SeverityPerDay">
+          <severityPerDay>-0.14</severityPerDay>
+        </li>
+      </comps> 
+      <stages> 
+        <li>
+            <label>unregistered</label>
+            <minSeverity>0.001</minSeverity>
+        </li>
+        <li>
+            <label>formatting</label>
+            <minSeverity>0.002</minSeverity>
+            <capMods>
+              <li>
+                <capacity>Consciousness</capacity>
+                <setMax>0.9</setMax>
+              </li>      
+            </capMods>
+         </li>
+         <li>
+            <label>connected</label>
+            <minSeverity>3</minSeverity>
+            <capMods>
+              <li>
+                <capacity>Consciousness</capacity>
+                <offset>0.1</offset>
+              </li>      
+            </capMods>
+         </li>
+         <li>
+            <label>disconnected</label>
+            <minSeverity>4</minSeverity>
+         </li>
+          <li>
+              <label>corrupted</label>
+              <minSeverity>5</minSeverity>
+          </li>
+      </stages>
+    </HediffDef>
+
+  <ThingDef ParentName="BodyPartProstheticMakeableBase">
+      <defName>MJUWE_MindJack</defName>
+      <label>mindjack</label>
+      <description>A mindjack implant designed to be installed in the brain, allowing the user to connect directly to an unique weapon's port, registering their unique neural architecture to the weapon's rudimentary onboard AI. While the user is wielding the registered weapon, both the weapon's effectiveness and user's consciousness are improved.\n\nOnce installed, the mindjack cannot be uninstalled, as this would cause irreparable brain damage. However, the mindjack can be formatted to restore it to its initial state, allowing the user to register to a new weapon, at the cost of their mental capacities being dampened while the formatting process runs</description>
+      <descriptionHyperlinks><RecipeDef>MJUWE_InstallMindJack</RecipeDef></descriptionHyperlinks>
+      <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+      <graphicData>
+        <texPath>MJUWE/MJUWEIMplant</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+        <color>(255,255,255)</color>
+		</graphicData>
+      <costList>
+        <Steel>40</Steel>
+        <ComponentIndustrial>6</ComponentIndustrial>
+      </costList>
+      <statBases>
+        <Mass>0.1</Mass>
+        <DeteriorationRate>0.2</DeteriorationRate>
+        <MaxHitPoints>100</MaxHitPoints>
+        <Flammability>0</Flammability>
+        <MarketValue>700</MarketValue> 
+      </statBases>
+      <recipeMaker>
+        <researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
+      </recipeMaker>
+      <isTechHediff>true</isTechHediff>
+      <techHediffsTags Inherit="False">
+        <!--<li>MJUWE_MindJack</li>-->
+        <li>Advanced</li>
+      </techHediffsTags>
+    </ThingDef>
+
+    <RecipeDef ParentName="SurgeryInstallImplantBase">
+      <defName>MJUWE_InstallMindJack</defName>
+      <label>install mindjack</label>
+      <description>Install a mindjack</description>
+      <descriptionHyperlinks>
+        <ThingDef>MJUWE_MindJack</ThingDef>
+        <HediffDef>MJUWE_MindJackHediff</HediffDef>
+      </descriptionHyperlinks>
+      <uiIconThing>MJUWE_MindJack</uiIconThing>
+      <jobString>Installing mindjack.</jobString>
+      <ingredients>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>MJUWE_MindJack</li>
+            </thingDefs>
+          </filter>
+          <count>1</count>
+        </li>
+      </ingredients>
+      <fixedIngredientFilter>
+        <thingDefs>
+          <li>MJUWE_MindJack</li>
+        </thingDefs>
+      </fixedIngredientFilter>
+      <appliedOnFixedBodyParts>
+        <li>Brain</li>
+      </appliedOnFixedBodyParts>
+      <addsHediff>MJUWE_MindJackHediff</addsHediff>
+    </RecipeDef>
+
+    <RecipeDef ParentName="SurgeryFlesh">
+      <defName>MJUWE_FormatMindJack</defName>
+      <label>format mindjack</label>
+      <description>testing.</description>
+      <workerClass>MindJackMod.MJUWE_SurgeryFormat</workerClass>
+      <jobString>Formatting mindjack.</jobString>
+      <effectWorking>Hacking</effectWorking>
+		  <soundWorking>Hacking_InProgress</soundWorking>
+      <workAmount>500</workAmount>
+      <hideBodyPartNames>true</hideBodyPartNames>
+      <targetsBodyPart>false</targetsBodyPart>
+      <descriptionHyperlinks>
+        <ThingDef>MJUWE_MindJack</ThingDef>
+      </descriptionHyperlinks>
+      <uiIconThing>MJUWE_MindJack</uiIconThing>
+      <anesthetize>false</anesthetize>
+    </RecipeDef>
+
+    <JobDef>
+      <defName>MJUWE_MindJackRegistration</defName>
+      <driverClass>MindJackMod.MJUWE_RegisterJob</driverClass>
+      <reportString>hacking TargetA.</reportString>
+    </JobDef>
+
+    <WeaponCategoryDef>
+		<defName>MJUWE_PortWeapon</defName>
+    </WeaponCategoryDef>
+
+    
+  <PawnKindDef ParentName="MercenaryEliteTierBase">
+    <defName>Mercenary_Elite_Mindjack</defName>
+    <label>mindjack mercenary</label>
+    <labelPlural>mindjack mercenaries</labelPlural>
+    <weaponTags Inherit="False">
+      <li>MJUWE_PortWeapon</li>
+    </weaponTags>
+    <weaponMoney>9999999</weaponMoney>
+    <apparelMoney>9999999</apparelMoney>
+    <techHediffsMoney>99999999</techHediffsMoney>
+    <combatPower>400</combatPower>
+    <techHediffsRequired>
+      <li>MJUWE_MindJack</li>
+    </techHediffsRequired>
+    <initialResistanceRange>15~23</initialResistanceRange>
+    <biocodeWeaponChance>0</biocodeWeaponChance>
+    <modExtensions>
+            <li Class="MindJackMod.MJUWE_DefModExtension">
+                <isMindjackRaider>true</isMindjackRaider>
+            </li>
+        </modExtensions>
+  </PawnKindDef>
+
+   <RaidStrategyDef>
+    <defName>MJUWE_MindjackRaid</defName>
+    <workerClass>MindJackMod.MJUWE_RaidStrategyWorker_MindjackRaid</workerClass>
+     <selectionWeightPerPointsCurve>
+      <points>
+        <li>(0, 1)</li>
+      </points>
+    </selectionWeightPerPointsCurve>
+    <selectionWeightCurvesPerFaction>
+      <li>
+        <faction>Mechanoid</faction>
+        <selectionWeightPerPointsCurve>
+          <points>
+            <li>(0, 0)</li>
+          </points>
+        </selectionWeightPerPointsCurve>
+      </li>
+    </selectionWeightCurvesPerFaction>
+    <pointsFactorCurve>
+      <points>
+        <li>0, 1</li>
+      </points>
+    </pointsFactorCurve>
+    <arriveModes>
+      <li>EdgeDrop</li>
+      <li>EdgeWalkIn</li>
+      <li>CenterDrop</li>
+      <li>RandomDrop</li>
+      <li>EdgeDropGroups</li>
+      <li>EdgeWalkInGroups</li>
+    </arriveModes>
+    <letterLabelEnemy>Mindjack Raid</letterLabelEnemy>
+    <arrivalTextEnemy>The raid seems to be led by a Mindjack user, who has enhanced combat capabilities. Eliminating or capturing them should be a high priority</arrivalTextEnemy>
+    </RaidStrategyDef>
+
+  </Defs>

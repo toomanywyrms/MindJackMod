@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="AArmoury_Gun_Launcher_Unique"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="AArmoury_Gun_Launcher_Unique"]</xpath>
+      <value>
+        <weaponTags Inherit="False">
+          <li>MJUWE_PortWeapon</li>
+        </weaponTags>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="AArmoury_Gun_Launcher_Unique"]/weaponTags</xpath>
+        <value>
+          <li>MJUWE_PortWeapon</li>
+        </value>
+    </match>
+  </Operation>
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="AArmoury_Gun_Launcher_Unique"]/generateAllowChance</xpath>
+    <value>
+      <generateAllowChance>1</generateAllowChance>
+    </value>
+  </Operation>
+
+</Patch>
